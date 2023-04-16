@@ -1,0 +1,251 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+    <style>
+      .cal-wrap {
+        width: 216px;
+        background-color: lightgray;
+      }
+
+      .cal-function {
+        background-color: #cdcdcd;
+      }
+
+      .cal-button {
+        height: 50px;
+        width: 50px;
+        border: 0px;
+      }
+
+      .cal-button:hover {
+        background-color: grey;
+      }
+
+      .cal-display {
+        height: 50px;
+        width: 100%;
+        border: 0px;
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+        color: grey;
+      }
+
+      .cal-display-sol {
+        height: 50px;
+        width: 100%;
+        border: 0px;
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .cal-sol {
+        background: linear-gradient(60deg, #ff0500, #ffa100);
+        border-radius: 0 0 10px 0;
+        color: #ffffff;
+        box-shadow: 0 25px 60px -10px rgba(255, 10, 0, 0.5);
+      }
+
+      .cal-sol:hover {
+        background-color: #1fa7ff;
+      }
+    </style>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div class="cal-wrap">
+      <input type="text" id="edu" class="cal-display" />
+      <input type="text" id="eds" class="cal-display-sol" />
+      <table class="cal-table">
+        <tr>
+          <td>
+            <input
+              type="button"
+              value="ac"
+              onclick="clr()"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input type="button" value="c" onclick="clt()" class="cal-button" />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="%"
+              onclick="dis('%')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="+"
+              onclick="dis('+')"
+              class="cal-button cal-function"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              type="button"
+              value="7"
+              onclick="dis('7')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="8"
+              onclick="dis('8')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="9"
+              onclick="dis('9')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="-"
+              onclick="dis('-')"
+              class="cal-button cal-function"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              type="button"
+              value="4"
+              onclick="dis('4')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="5"
+              onclick="dis('5')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="6"
+              onclick="dis('6')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="/"
+              onclick="dis('/')"
+              class="cal-button cal-function"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              type="button"
+              value="1"
+              onclick="dis('1')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="2"
+              onclick="dis('2')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="3"
+              onclick="dis('3')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="*"
+              onclick="dis('*')"
+              class="cal-button cal-function"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><input type="button" value="" class="cal-button" /></td>
+          <td>
+            <input
+              type="button"
+              value="0"
+              onclick="dis('0')"
+              class="cal-button"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="."
+              onclick="dis('.')"
+              class="cal-button cal-function"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="="
+              onclick="sol()"
+              class="cal-button cal-sol"
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function dis(val) {
+        document.getElementById("edu").value += val;
+      }
+
+      function sol() {
+        let x = document.getElementById("edu").value;
+        let y = eval(x);
+        document.getElementById("edu").value = y;
+        document.getElementById("eds").value = y;
+      }
+
+      function clr() {
+        document.getElementById("edu").value = "";
+        document.getElementById("eds").value = "";
+      }
+
+      function clt() {
+        document.getElementById("edu").value = document
+          .getElementById("edu")
+          .value.slice(0, -1);
+      }
+    </script>
+  </body>
+</html>
