@@ -83,6 +83,8 @@
 <script src="../assets/js/navbar-collapse.js"></script>
 
 <script src="../assets/js/change-lang.js"></script>
+
+<script src="./assets/js/modal_changelang.js"></script>
 </body>
 
 </html>
