@@ -169,9 +169,9 @@ Route::add('/cabinet/edit_chapters', function() {
 	include('pages_cabinet/chapters_edit.php');
 });
 
-Route::add('/cabinet/users', function() {
-	include('pages_cabinet/users.php');
-});
+// Route::add('/cabinet/users', function() {
+// 	include('pages_cabinet/users.php');
+// });
 
 // Route::add('/cabinet/tags', function() {
 // 	include('pages_cabinet/tags.php');
@@ -181,16 +181,16 @@ Route::add('/cabinet/users', function() {
 // 	include('pages_cabinet/tags_edit.php');
 // });
 
-Route::add('/cabinet/edit_users', function() {
-	include('pages_cabinet/users_edit.php');
-});
+// Route::add('/cabinet/edit_users', function() {
+// 	include('pages_cabinet/users_edit.php');
+// });
 
 Route::add('/cabinet/edit_article', function() {
 	include('pages_cabinet/articles_edit.php');
 });
 
 Route::add('/catalog', function() {
-	include('pages/catalog_page.php');
+	include('pages/index.php');
 });
 
 Route::add('/article', function() {

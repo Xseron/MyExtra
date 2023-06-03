@@ -10,13 +10,5 @@
         <a href="<?=URL?>/cabinet/add_article" ><img style="width: 20px;margin-right:5px; margin-bottom:5px" src="/img/cabinet/icons/add.png"/> Добавить статью </a>
         <a href="<?=URL?>/cabinet/chapters" ><img style="width: 20px; margin-right:5px; margin-bottom:5px" src="/img/cabinet/icons/sections.png"/> Разделы </a>
         <!-- <a href="<?=URL?>/cabinet/tags" ><img style="width: 20px; margin-right:5px; margin-bottom:5px" src="/img/cabinet/icons/sections.png"/> Теги </a> -->
-        <?php 
-        session_start();
-        $result = mysqli_query($link, "SELECT isadmin FROM `users` WHERE id = {$_SESSION['id']}");
-        $isadmin = mysqli_fetch_assoc($result)['isadmin'];
-        if($isadmin){
-            echo '<a href="/cabinet/users" ><img style="width: 20px; margin-right:5px; margin-bottom:5px" src="/img/cabinet/icons/user.png"/> Пользователи </a>';
-        }
-        ?>
     </div>
 </div>

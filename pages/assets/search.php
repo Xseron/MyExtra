@@ -12,7 +12,7 @@
     $("#search-form").submit(function (e) { 
         e.preventDefault();
         var a = $('#search-input').val();
-        window.location.href = "/catalog?text="+a;
+        window.location.href = "/catalog?text="+a.replaceAll(' ', '-');;
     });
     function myFunction() {
         // Declare variables

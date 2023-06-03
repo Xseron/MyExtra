@@ -4,13 +4,11 @@ require_once('layouts/cabinet_header.php');
 <div id="main-content" class="container allContent-section py-4">
     <h3 class="border-b-grey">Статьи</h3><br>
     <span id="show-chapters-btn" class="button-add" role="button">Выбрать раздел 🡇</span><br>
-    <ul id="field" class="field" name="forma" data-name="Field" required="" class="select-field w-select">
+    <ul id="field" class="field" style="display: none;" name="forma" data-name="Field" required="" class="select-field w-select">
         <li class="selected">Все</li>
     </ul>
     <?php
-    session_start();
-    $id = $_SESSION['id'];
-    $result = mysqli_query($link, "SELECT articles.id, articles.header, articles.time, chapters.name, chapters.subject FROM `articles` INNER JOIN chapters ON articles.chapter_id = chapters.id WHERE chapters.user_id = {$_SESSION['id']}");
+    $result = mysqli_query($link, "SELECT articles.id, articles.header, articles.time, chapters.name, chapters.subject FROM `articles` INNER JOIN chapters ON articles.chapter_id = chapters.id ORDER BY time DESC");
     $num = mysqli_num_rows($result);
 
     $item_on_page = 5;
@@ -26,14 +24,14 @@ require_once('layouts/cabinet_header.php');
         $date = $day . "." . $month . "." . $year;
         $article_html = '
             <div class="item ' . str_replace(' ', '', $row['name']) . '-' . str_replace(' ', '', $row['subject']) . '">
-            <h5 class="item-header"> ' . $row['header'] . ' | В разделе - ' . $row['name'] . ', с тематикой ' . $row['subject'] . ' </h5>
+            <h6 class="item-header"> ' . $row['header'] . ' | В разделе - ' . $row['name'] . ', с тематикой ' . $row['subject'] . ' </h6>
             <a href="/cabinet/edit_article?id=' . $row['id'] . '">Изменить</a> | 
             <a href="/php/articles.php?type=delete&amp;id=' . $row['id'] . '">Удалить</a> | 
-            <a href="/article?id=' . $row['id'] . '">Посмотреть</a>
+            <a href="/article?id=' . $row['id'] .'&amp;key='. bin2hex($row['id']). '">Посмотреть</a>
             &nbsp&nbsp&nbsp
-            <span> '.$date.' </span>
+            <span style="font-size:14px"> '.$date.' </span>
         </div>
-        <div class="item ' . $row['name'] . '-' . $row['subject'] . '"><div class="line"></div></div>
+        <div class="item"><div class="line"></div></div>
         ';
 
         print($article_html);

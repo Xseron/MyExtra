@@ -7,7 +7,7 @@
     $url = $protocol . $host;
 
     if (isset($_GET['type']) && $_GET['type'] == "get") {
-        $result = mysqli_query($link, "SELECT * FROM `chapters` WHERE chapters.user_id = {$_SESSION['id']}");
+        $result = mysqli_query($link, "SELECT * FROM `chapters`");
         $res = array();
         while($row = mysqli_fetch_assoc($result)) {
             array_push($res, $row);
@@ -18,7 +18,7 @@
     else if(isset($_GET['type']) && $_GET['type'] == "set"){
         $name = $_POST['name'];
         $subject = $_POST['subject'];
-        $result = mysqli_query($link, " INSERT INTO chapters(name,subject,user_id) VALUES ('$name','$subject','{$id}');");
+        $result = mysqli_query($link, " INSERT INTO chapters(name,subject) VALUES ('$name','$subject');");
         echo '<script>window.location.href = "'.$url.'/cabinet/chapters";</script>';
     }
 

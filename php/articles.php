@@ -1,13 +1,11 @@
 <?php
     require_once('../config/db.php');
-    session_start();
-    $id = $_SESSION['id'];
 
     if (isset($_GET['type']) && $_GET['type'] == "get-from-chapter") {
         $chapter_name = $_GET['chaper'];
         $result = mysqli_query($link, "SELECT articles.header, articles.body, chapters.name, chapters.subject, articles.time FROM `articles`
                                         INNER JOIN chapters on chapters.id = articles.chapter_id
-                                        WHERE chapters.name = {$chapter_name} AND chapters.user_id = {$id}");
+                                        WHERE chapters.name = {$chapter_name}");
         $res = array();
         while ($row = mysqli_fetch_assoc($result)) {
             array_push($res, $row);
@@ -19,7 +17,7 @@
         $subject = $_GET['subject'];
         $result = mysqli_query($link, "SELECT articles.header, articles.body, chapters.name, chapters.subject FROM `articles`
                                         INNER JOIN chapters on chapters.id = articles.chapter_id
-                                        WHERE chapters.subject = {$subject} AND articles.user_id = {$id}");
+                                        WHERE chapters.subject = {$subject}");
         $res = array();
         while ($row = mysqli_fetch_assoc($result)) {
             array_push($res, $row);
@@ -30,8 +28,7 @@
     if (isset($_GET['type']) && $_GET['type'] == "get") {
         $result = mysqli_query($link, "SELECT articles.id, articles.header, articles.body, chapters.name, chapters.subject FROM `articles`
                                         INNER JOIN chapters on chapters.id = articles.chapter_id
-                                        WHERE chapters.user_id = {$id}
-                                        ORDER BY articles.time");
+                                        ORDER BY articles.time DESC");
                                         
         $res = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -44,7 +41,7 @@
         $text = isset($_GET['text']);
         $result = mysqli_query($link, "SELECT articles.id, articles.header, articles.body, chapters.name, chapters.subject FROM `articles`
                                         INNER JOIN chapters on chapters.id = articles.chapter_id
-                                        WHERE chapters.user_id = {$id}");
+                                        ORDER BY articles.time DESC");
         $res = array();
         while ($row = mysqli_fetch_assoc($result)) {
             if (strpos($row['header'], $text) !== false) {

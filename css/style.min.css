@@ -95,6 +95,10 @@
     box-sizing: border-box
 }
 
+/* .menu{
+    display: none;
+} */
+
 body,
 html {
     height: 100%;
@@ -105,10 +109,9 @@ html {
     margin-bottom: 45px;
 }
 
-/* .article__title {
-    font-family: text-font !important;
-    font-weight: 700;
-} */
+.article{
+    padding: 0 3rem;
+}
 
 button,
 input,
@@ -196,21 +199,20 @@ h6 {
 }
 
 [class*=__container] {
-    max-width: 61.5625rem;
-    margin: 0 auto;
-    padding: 0 .9375rem
+    max-width: 90rem;
+    padding: 0 3rem
 }
 
 [class*=__container-big] {
-    max-width: 84.6875rem;
+    max-width: 90vw;
     margin: 0 auto;
-    padding: 0 .9375rem
+    padding: 0 0.5vw
 }
 
 [class*=__container-middle] {
-    max-width: 65rem;
+    max-width: 60vw;
     margin: 0 auto;
-    padding: 0 .9375rem
+    padding: 0 0.5vw
 }
 
 .checkbox {
@@ -718,8 +720,8 @@ body::after {
     border-radius: 3.14483px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 1.5rem;
-    flex: 0 0 1.5rem;
-    height: 1.5rem;
+    flex: 0 0 2rem;
+    height: 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -847,6 +849,10 @@ body::after {
     position: relative;
     width: 100%
 }
+.mainscreen_input{
+    width: 70%;
+}
+
 
 .form-mainscreen__actions {
     display: -webkit-box;
@@ -977,6 +983,7 @@ body::after {
 }
 
 .catalog__container {
+    max-width: 60%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -987,6 +994,8 @@ body::after {
 }
 
 .item-catalog {
+    margin: 0 auto;
+    min-width: 65vw;
     background: #fff;
     -webkit-box-shadow: 0 6px 17px rgba(22, 22, 22, .25);
     box-shadow: 0 6px 17px rgba(22, 22, 22, .25);
@@ -1040,6 +1049,9 @@ body::after {
     color: #fff;
     padding: .375rem 1.5rem .3125rem 1.5rem
 }
+#share-btn{
+    margin-right: 10px;
+}
 
 .item-catalog__link {
     line-height: 120%;
@@ -1050,6 +1062,7 @@ body::after {
 }
 
 .item-catalog__text {
+    max-width: 40vw;
     line-height: 120%
 }
 
@@ -1265,8 +1278,8 @@ body::after {
 @media (min-width:43.81125em) {
     .item-catalog__image-ibg {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 19.6875rem;
-        flex: 0 0 19.6875rem
+        -ms-flex: 0 0 30rem;
+        flex: 0 0 30rem;
     }
 }
 
@@ -1931,8 +1944,23 @@ body::after {
     }
 }
 
+.page{
+    display: flex;
+    flex-direction: row;
+}
+
+
 @media (max-width:43.75em) {
+    .catalog__container{
+        padding: 0 .9375rem;
+    }
+    .item-catalog__text{
+        max-width: 100%;
+    }
     .item-catalog {
+        min-width: 93vw;
+        margin: auto 0;
+        padding: auto 0;
         -webkit-box-orient: vertical;
         -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -1950,8 +1978,8 @@ body::after {
 
 @media (max-width:43.81125em) and (max-width:30em) {
     .item-catalog__image-ibg {
-        -ms-flex-preferred-size: 8.75rem;
-        flex-basis: 8.75rem
+        -ms-flex-preferred-size: 10rem;
+        flex-basis: 10rem
     }
 }
 
@@ -2456,20 +2484,20 @@ body::after {
 
 @media (max-width:43.81125em) and (min-width:43.75em) {
     .item-catalog__image-ibg {
-        -ms-flex-preferred-size: 10.625rem;
-        flex-basis: 10.625rem
+        -ms-flex-preferred-size: 12rem;
+        flex-basis: 12rem
     }
 }
 
 @media (max-width:43.81125em) and (min-width:30em) and (max-width:43.75em) {
     @supports (flex-basis:clamp(8.75rem, 4.6590909091rem + 13.6363636364vw, 10.625rem)) {
         .item-catalog__image-ibg {
-            -ms-flex-preferred-size: clamp(8.75rem, 4.6590909091rem + 13.6363636364vw, 10.625rem);
-            flex-basis: clamp(8.75rem, 4.6590909091rem + 13.6363636364vw, 10.625rem)
+            -ms-flex-preferred-size: clamp(8.75rem, 4.6590909091rem + 15vw, 10.625rem);
+            flex-basis: clamp(8.75rem, 4.6590909091rem +15vw, 10.625rem)
         }
     }
 
-    @supports not (flex-basis:clamp(8.75rem, 4.6590909091rem + 13.6363636364vw, 10.625rem)) {
+    @supports not (flex-basis:clamp(8.75rem, 4.6590909091rem + 15vw, 10.625rem)) {
         .item-catalog__image-ibg {
             -ms-flex-preferred-size: calc(8.75rem + 1.875 * (100vw - 30rem)/ 13.75);
             flex-basis: calc(8.75rem + 1.875 * (100vw - 30rem)/ 13.75)

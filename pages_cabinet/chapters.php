@@ -19,7 +19,7 @@ require_once('layouts/cabinet_header.php');
         <?php
         require_once("config/db.php");
         session_start();
-        $result = mysqli_query($link, "SELECT * FROM `chapters` WHERE chapters.user_id = {$_SESSION['id']}");
+        $result = mysqli_query($link, "SELECT * FROM `chapters`");
         $num = mysqli_num_rows($result);
         $item_on_page = 5;
         $i = 1;

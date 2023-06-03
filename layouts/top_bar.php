@@ -14,13 +14,13 @@
             <?php require_once('pages/assets/search.php') ?>
         </div>
         <div data-da=".menu__body,767" class="header__icons icons-header">
-            <a href="/cabinet" class="icons-header__icon">
+            <!-- <a href="/cabinet" class="icons-header__icon">
                 <img class="img-fluid" src="img/header/user.png" alt="Иконка">
-            </a>
-            <a id="calculator-toggle" class="icons-header__icon">
+            </a> -->
+            <!-- <a href="https://calculator-online.net/" target="_blank" class="icons-header__icon">
                 <img class="img-fluid" src="img/header/1.svg" alt="Иконка">
             </a>
-            <a id="wether-toggle" class="icons-header__icon">
+            <a href="https://www.gismeteo.lv/ru/" target="_blank" class="icons-header__icon">
                 <img class="img-fluid" src="img/header/2.svg" alt="Иконка">
             </a>
             <a href="https://www.xe.com/" target="_blank" class="icons-header__icon">
@@ -30,7 +30,7 @@
             </a>
             <a href="/php/unlogin.php" class="icons-header__icon">
                 <img class="img-fluid" src="img/header/4.svg" alt="Иконка">
-            </a>
+            </a> -->
         </div>
         <div class="header__menu menu">
             <nav class="menu__body">
@@ -44,28 +44,3 @@
         <button type="button" class="menu__icon icon-menu"><span></span></button>
     </div>
 </header>
-<?php
-require_once('pages/assets/calculator.php');
-require_once('pages/assets/wether.php');
-?>
-<script>
-    $(document).click(function(event) {
-        if (!$(event.target).closest('#calculator-toggle, #calculator-wiget').length) {
-            $('#calculator-wiget').hide();
-        }
-        if (!$(event.target).closest('#wether-toggle, #weather').length) {
-            $('#weather').hide();
-        }
-        if (!$(event.target).closest('#currency-conventer-toggle, #oanda_ecc').length) {
-            $('#oanda_ecc').hide();
-        }
-    });
-    $("#calculator-toggle").click(function(e) {
-        e.preventDefault();
-        $("#calculator-wiget").toggle();
-    });
-    $("#wether-toggle").click(function(e) {
-        e.preventDefault();
-        $("#weather").toggle();
-    });
-</script>

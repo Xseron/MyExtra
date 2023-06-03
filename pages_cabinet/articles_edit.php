@@ -11,7 +11,7 @@ require_once('layouts/cabinet_header.php');
         .ck-editor__editable[role="textbox"] {
             /* editing area */
             min-height: 200px;
-            max-height: 700px;
+            max-height: 600px;
         }
 
         .ck-content .image {

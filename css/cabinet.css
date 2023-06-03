@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap');
 
 ul.field {
-  display: none;
   list-style: none;
   margin: 0;
   padding: 4px;
@@ -66,12 +65,16 @@ ul {
   transition: 0.5s;
 }
 
+.navbar-nav{
+  width: 90vw;
+}
 
-@media (min-width:992px) {
+
+/* @media (min-width:992px) {
   .log-out {
     margin-right: 3rem;
   }
-}
+} */
 
 #main-content {
   width: 83vw;
