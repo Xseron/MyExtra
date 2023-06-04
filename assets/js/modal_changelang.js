@@ -38,5 +38,6 @@ function pickLanguage(lang){
 $('.Kazakh').click(function(){ pickLanguage("Kazakh")})
 $('.Russian').click(function(){ pickLanguage("Russian")})
 $('.English').click(function(){ pickLanguage("English")})
+$('.Select').click(function(){ pickLanguage("Russian")})
 
 

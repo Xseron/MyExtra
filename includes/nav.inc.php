@@ -92,7 +92,8 @@ require_once("./languages/lang.php");
 
   <!-- CUSTOM CSS INCLUSIONS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/responsivity/modal_changelang.css" />
+  <link rel="stylesheet" href="./assets/css/responsivity/modal_changelang.css" /> 
+  <!-- tut css -->
 
   <!-- RESPONSIVITY CSS INCLUSIONS -->
   <link rel="stylesheet" href="./assets/css/responsivity/media-queries.css" />
@@ -248,9 +249,10 @@ require_once("./languages/lang.php");
           
         
         </script> -->
+
     </ul>
   </nav>
-  <!-- <div class="popup"> <a href="#" class="close Select"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  <div class="popup"> <a href="#" class="close Select"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" width="10px" height="10px" viewBox="215.186 215.671 80.802 80.8"
         enable-background="new 215.186 215.671 80.802 80.8" xml:space="preserve">
             <polygon fill="#FFFFFF" points="280.486,296.466 255.586,271.566 230.686,296.471 215.19,280.964 240.086,256.066 215.186,231.17 
@@ -269,12 +271,12 @@ require_once("./languages/lang.php");
         </div>
          <h1 class="welcome">Welcome!</h1>
     
-        <p class="textChooseYourLanguage">Choose Your Language</p>
-        <div class="bottom-popup"> <h1 class="welcome lang">Russian</h1></div>
+        <!-- <p class="textChooseYourLanguage">Choose Your Language</p> -->
+        <div class="bottom-popup"> <h1 class="welcome lang">Choose Your Language</h1></div>
         <div class="buttons">
             <button class="Kazakh btn">Kazakh</button>
             <button class="Russian btn">Russian</button>
             <button class="English btn">English</button>
         </div>
 
-    </div> -->
+    </div>
