@@ -61,7 +61,7 @@
         <li><a href="./categories.php">More +</a></li>
       </ul>
     </li>
-    <li>
+    <li class="join-us">
       <h2>Join Us</h2>
       <ul class="box">
         <li>

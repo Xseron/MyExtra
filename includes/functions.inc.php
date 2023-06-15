@@ -29,56 +29,60 @@ alert('<?php echo $message ?>');
   // Function to Create Article Card
   function createArticleCard($title, $img, $data, $category, $cat_id, $id, $color, $new, $trend, $marked, $dedline) {
     echo '
-    <article class="card">
-      <a href="';
-    
-    if(isset($_SESSION['USER_LOGGED_IN'])) {
-      if($marked) {
-        echo 'remove-bookmark.php?id='.$id;
-      }
-      else {
-        echo 'add-bookmark.php?id='.$id;
-      }
-    }
-    else {
-      echo 'bookmarks.php';
-    }
-    echo '" class="bookmark" title="';
-    
-    if($marked) {
-      echo 'Remove from Bookmarks">
-      <i class="fas fa-bookmark"></i>
-    </a>';
-    }
-    else {
-      echo 'Add to Bookmarks">
-      <i class="far fa-bookmark"></i>
-    </a>';
-    }
-    
+    <article class="card">';
+    //BRUH POMENYAY POTOM
     echo '<div class="card-img">
-        <img src="./assets/images/articles/'.$img.'" />
+        <img src="./assets/images/articles/article-16-1685039437.jpg" />
       </div>
-      <div>
-        <div class="tag '.$color.'"><a href="articles.php?id='.$cat_id.'">'.$category.'</a></div>';
-    if($new){
-      echo '  <div class="tag tag-new">NEW</div>';
-    }
-    if($trend) {
-      echo '  <div class="tag tag-trend"><a href="search.php?trending=1">TRENDING</a></div>';
-    }
-    echo '
+      <div class="card-text">
         <h3 class="card-title" href="./article.html">
           '.$title.'
         </h3>
+        <div class="tag '.$color.'"><a href="articles.php?id='.$cat_id.'">'.$category.'</a></div>';
+        if($new){
+          echo '  <div class="tag tag-new">New</div>';
+        }
+        if($trend) {
+          echo '  <div class="tag tag-trend"><a href="search.php?trending=1">Trending</a></div>';
+        }
+        echo '
         <h6 class="card-dedline">
           Deadline: '.date("d M Y",strtotime($dedline)).'
         </h6>
         <p class="card-data">
           '.strip_tags($data).'
         </p>
-        <a href="news.php?id='.$id.'" class="btn btn-card">Read More <span>&twoheadrightarrow; </span>
-        </a>
+        <div class="btn-container">
+          <a href="news.php?id='.$id.'" class="btn btn-card">Read More
+          </a>';
+          echo '
+          <a href="';
+          
+          if(isset($_SESSION['USER_LOGGED_IN'])) {
+            if($marked) {
+              echo 'remove-bookmark.php?id='.$id;
+            }
+            else {
+              echo 'add-bookmark.php?id='.$id;
+            }
+          }
+          else {
+            echo 'bookmarks.php';
+          }
+          echo '" class="bookmark" title="';
+          
+          if($marked) {
+            echo 'Remove from Bookmarks">
+            <i class="fas fa-bookmark"></i>
+          </a>';
+          }
+          else {
+            echo 'Add to Bookmarks">
+            <i class="far fa-bookmark"></i>
+          </a>';
+          }
+          echo '
+        </div>
       </div>
     </article>';
   }
@@ -87,22 +91,23 @@ alert('<?php echo $message ?>');
   function createCategoryCard($title, $img, $data,$id) {
     echo '
     <article class="card">
-      <div class="card-img">
-        <img src="./assets/images/category/'.$img.'" />
-      </div>
-      <div>
-        <h3 class="card-title text-center" href="./article.html">
-          '.$title.'
-        </h3>
-        <p class="card-data">
-          '.$data.'
-        </p>
-        <div class="btn-block">
-          <a href="articles.php?id='.$id.'" class="btn btn-card">
-            Read More 
-            <span>&twoheadrightarrow; </span>
-          </a>
+      <div class="card-info">
+        <div class="card-img">
+          <img src="./assets/images/category/code1685039001.jpg" />
         </div>
+        <div class="card-text">
+          <h3 class="card-title" href="./article.html">
+            '.$title.'
+          </h3>
+          <p class="card-data">
+            '.$data.'
+          </p>
+          </div>
+      </div>
+      <div class="btn-block">
+        <a href="articles.php?id='.$id.'" class="btn btn-card">
+          Read More
+        </a>
       </div>
     </article>';
   }
@@ -111,7 +116,7 @@ alert('<?php echo $message ?>');
   function createMoreCard($link) {
     echo '
     <a href="'.$link.'" class="card card-more d-flex">
-      <h3>MORE +</h3>
+      <h3>READ MORE</h3>
     </a>
     ';
   }
@@ -133,19 +138,21 @@ alert('<?php echo $message ?>');
     <div class="slide '.$active.'">
       <img src="./assets/images/articles/'.$img.'"/>
       <div class="info">
-        <div class=" tag '.$color.'">'.$category.'</div>';
-        if($new){
-          echo '  <div class="tag tag-new">NEW</div>';
-        }
-        if($trend) {
-          echo '  <div class="tag tag-trend">TRENDING</div>';
-        }
-      echo
-        '
-        <h1>'.$title.'</h1>
-        <p>
-          '.$content.'
-        </p>
+        <div class="info-text">
+          <h1>'.$title.'</h1>
+          <div class=" tag '.$color.'">'.$category.'</div>';
+          if($new){
+            echo '  <div class="tag tag-new">NEW</div>';
+          }
+          if($trend) {
+            echo '  <div class="tag tag-trend">TRENDING</div>';
+          }
+        echo
+          '
+          <p>
+            '.$content.'
+          </p>
+        </div>
         <a href="news.php?id='.$id.'" class="btn btn-primary">Read More</a>
       </div>
     </div>';

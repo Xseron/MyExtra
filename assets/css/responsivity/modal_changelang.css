@@ -89,15 +89,15 @@ a.start:hover {
     display: flex;
     gap:30px;
 }
-
+/* 
 .btn {
     margin-top: -50px;
     background-color: #fff;
     border: 0px solid black;
     border-radius: 30px;
-    /* box-shadow: black 4px 4px 0 0; */
+    box-shadow: black 4px 4px 0 0;
     box-shadow: rgba(31, 31, 31, 0.2) 0 3px 5px -1px,rgba(31, 31, 31, .14) 0 6px 10px 0,rgba(31, 31, 31, .12) 0 1px 18px 0;
-    /* color: #422800; */
+    color: #422800;
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
@@ -109,4 +109,4 @@ a.start:hover {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-}
+} */

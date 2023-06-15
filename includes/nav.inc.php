@@ -121,11 +121,16 @@ require_once("./languages/lang.php");
     </label>
     <input type="checkbox" id="btn" class="input" />
     <ul class="ul">
+      <li>
+          <a href="./search.php" class="search <?php if ($search) echo 'current' ?>">
+            <i id="search-icon" class="fas fa-search"></i>
+          </a>
+      </li>
       <!-- We ECHO class current based upon the boolean variables used in above PHP Snippet -->
       <li><a href="./index.php" <?php if ($home) echo 'class="current"' ?>>Home</a></li>
       <li>
         <label for="btn-1" class="show">Categories +</label>
-        <a href="./categories.php" <?php if ($category) echo 'class="current"' ?>>Categories</a>
+        <a href="./categories.php" <?php if ($category) echo 'class="current"' ?>>Categories*</a>
         <input type="checkbox" id="btn-1" class="input" />
         <ul>
           <?php
@@ -160,11 +165,12 @@ require_once("./languages/lang.php");
         </ul>
       </li>
       <li><a href="./bookmarks.php" <?php if ($bookmark) echo 'class="current"' ?>>Bookmarks</a></li>
+      <li><a>Language*</a></li>
       <?php
       if (isset($_SESSION['USER_NAME'])) {
       } else {
       ?>
-        <li><a href="./user-login.php" <?php if ($login) echo 'class="current"' ?>>Login</a>
+        <li><a href="./user-login.php" <?php if ($login) echo 'class="current"' ?>>About Us</a></li>
           <!-- <li>
         <label for="btn-2" class="show">Login +</label>
         <a href="./user-login.php" <?php if ($login) echo 'class="current"' ?>>Login</a>
@@ -177,12 +183,6 @@ require_once("./languages/lang.php");
         <?php
       }
         ?>
-        <li>
-          <a href="./search.php" <?php if ($search) echo 'class="current"' ?>>
-            <span>Search</span>
-            <i id="search-icon" class="fas fa-search"></i>
-          </a>
-        </li>
         <?php
 
         // If user is logged in

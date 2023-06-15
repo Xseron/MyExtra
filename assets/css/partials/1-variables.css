@@ -1,10 +1,11 @@
 :root {
   /* COLOR VARIABLES */
-  --primary-color: #c72727;
+  --primary-color: #FF3833;
   --secondary-color: #f99500;
   --light-color: #f1f1f1;
   --dark-color: #50514f;
   --black-color: #333333;
+  --dark-black-color: #272727;
   --tag-trend-color: #fa163f;
   --tag-yellow-color: #ffbe0b;
   --tag-purple-color: #8338ec;
@@ -15,13 +16,16 @@
   --tag-brown-color: #663f3f;
   --hover-color: #ee4444;
   --active-color: #b90615;
+  --header-color: #626262;
 
   /* FONT SIZE VARIABLES */
   --ts-vs: 0.56rem;
+  --ts-vsl: 0.625rem;
   --ts-sml: 0.8rem;
   --ts-md: 1.1rem;
   --ts-lg: 1.25rem;
   --hs-vs: 1.3rem;
+  --hs-vsl: 1.6875rem;
   --hs-sml: 2rem;
   --hs-md: 2.5rem;
   --hs-lg: 3rem;

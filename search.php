@@ -78,7 +78,7 @@
   </div>
 </section>
 <!-- Container to store the Search Results -->
-<section class="py-1 category-list">
+<section class="py-1 article-list">
   <div class="container">
     <h2 class="search-heading">Search Results :</h2>
     <div class="card-container">

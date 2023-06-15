@@ -40,7 +40,7 @@
         $article_trend = $data['article_trend'];
         
         // Updating the title with a substring containing at most length of 50 characters
-        $article_title = substr($article_title,0,50).' . . . . .';
+        $article_title = substr($article_title,0,29).' . . . . .';
         
         // Updating the description with a substring containing at most length of 150 characters
         $article_desc = substr($article_desc,0,100).' . . . . .';

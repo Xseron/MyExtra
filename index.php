@@ -9,7 +9,7 @@
 ?>
 
 <!-- Article List Container -->
-<section class="py-1 category-list">
+<section class="py-1 article-list">
   <div class="container">
     <h2 class="headings">Articles</h2>
     <div class="card-container">
