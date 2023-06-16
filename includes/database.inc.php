@@ -8,7 +8,7 @@ $host = "localhost";
 $user = "root";
 
 // MySQL Password
-$pass = "OOcrcP1P4nt**";
+$pass = "";
 
 // Default Database name
 $db = "news-portal";
