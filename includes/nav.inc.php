@@ -165,12 +165,21 @@ require_once("./languages/lang.php");
         </ul>
       </li>
       <li><a href="./bookmarks.php" <?php if ($bookmark) echo 'class="current"' ?>>Bookmarks</a></li>
-      <li><a>Language*</a></li>
+      <li>
+        <a>Language*</a>
+        <div class="selectlang">
+          <div class="header__languages">
+            <a id="rus-btn" <?php if($_SESSION['lang']=='ru'){?>class="active-lang"<?php }?>>RUS</a>
+            <a id="kz-btn" <?php if($_SESSION['lang']=='kz'){?>class="active-lang"<?php }?>>KZ</a>
+            <a id="eng-btn" <?php if($_SESSION['lang']=='en'){?>class="active-lang"<?php }?>> EN</a>
+          </div>
+        </div>
+      </li>
       <?php
       if (isset($_SESSION['USER_NAME'])) {
       } else {
       ?>
-        <li><a href="./user-login.php" <?php if ($login) echo 'class="current"' ?>>About Us</a></li>
+        <li><a href="./about-us.php" <?php if ($login) echo 'class="current"' ?>>About Us</a></li>
           <!-- <li>
         <label for="btn-2" class="show">Login +</label>
         <a href="./user-login.php" <?php if ($login) echo 'class="current"' ?>>Login</a>
@@ -207,13 +216,6 @@ require_once("./languages/lang.php");
           echo '<li><a disabled>Hello ' . $_SESSION["USER_NAME"] . ' !</a></li>';
         }
         ?>
-        <div class="selectlang">
-          <div class="header__languages">
-            <a id="rus-btn" <?php if($_SESSION['lang']=='ru'){?>class="active-lang"<?php }?>>RUS</a>
-            <a id="kz-btn" <?php if($_SESSION['lang']=='kz'){?>class="active-lang"<?php }?>>KZ</a>
-            <a id="eng-btn" <?php if($_SESSION['lang']=='en'){?>class="active-lang"<?php }?>> EN</a>
-          </div>
-        </div>
         <!-- <script>
           $("#rus-btn").click(function (e) { 
             e.preventDefault();

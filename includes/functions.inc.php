@@ -30,7 +30,6 @@ alert('<?php echo $message ?>');
   function createArticleCard($title, $img, $data, $category, $cat_id, $id, $color, $new, $trend, $marked, $dedline) {
     echo '
     <article class="card">';
-    //BRUH POMENYAY POTOM
     echo '<div class="card-img">
         <img src="./assets/images/articles/article-16-1685039437.jpg" />
       </div>

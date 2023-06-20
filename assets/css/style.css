@@ -145,6 +145,7 @@
   display: list-item;
   margin: 0px;
   border-radius: 0px;
+  background: #DFDFDF;
   /* height: 20px; */
 }
 
@@ -820,3 +821,107 @@ form button {
   font-weight: 700;
   color: #e62828;
 }
+
+/* About-us */
+.about-us {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.about-us-content {
+  display: flex;
+}
+
+.our-team {
+  flex:0.25;
+}
+
+.our-team ul li h3 {
+  cursor: pointer;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.our-team ul li .member-names {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+
+.our-team ul li .open {
+  display: block;
+}
+
+.members {
+  flex:0.75;
+  text-align: center;
+}
+
+.members h2 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.member-abstract {
+  text-align: center;
+}
+
+.member-abstract h2,h4,h5 {
+  margin-bottom: 5px;
+}
+
+.members ul {
+  display: grid;
+  /* justify-content: space-between; */
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 20px;
+}
+
+
+.members ul li img {
+  width: 200px;
+  border-radius: 100%;
+  margin-bottom: 5px;
+}
+
+/* Member info */
+.member-info{
+  flex:0.75
+}
+
+.member-info .member-abstract {
+  margin-bottom: 35px;
+}
+
+.member-info img {
+  width: 300px;
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+
+.member-info .member-abstract h2 {
+  font-size: 45px;
+  text-transform: uppercase;
+}
+
+.member-info .member-abstract h4 {
+  font-size: 20px;
+}
+
+.member-info .member-abstract h5 {
+  font-size: 15px;
+}
+
+.member-info p{
+  font-size: 17px;
+}
+
+.member-info a {
+  font-weight: bold;
+  color:black;
+  display: block;
+  padding-bottom: 5px;
+}
+
