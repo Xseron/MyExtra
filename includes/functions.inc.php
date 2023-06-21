@@ -136,6 +136,7 @@ alert('<?php echo $message ?>');
     echo '
     <div class="slide '.$active.'">
       <img src="./assets/images/articles/'.$img.'"/>
+      <div class="before"></div>
       <div class="info">
         <div class="info-text">
           <h1>'.$title.'</h1>
@@ -154,6 +155,7 @@ alert('<?php echo $message ?>');
         </div>
         <a href="news.php?id='.$id.'" class="btn btn-primary">Read More</a>
       </div>
+      <div class="after"></div>
     </div>';
   }
 

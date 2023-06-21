@@ -19,6 +19,7 @@ $bookmark = false;
 $changePass = false;
 $category = false;
 $search = false;
+$about_us = false;
 
 // Strpos returns the position of the search string in the main string or returns 0 (false)
 // Checking if the page is Home Page
@@ -71,6 +72,12 @@ if (strpos($uri, "articles.php") != false) {
 if (strpos($uri, "news.php") != false) {
   $home = false;
   $page_title = " Article";
+}
+
+if (strpos($uri, "about-us.php") != false) {
+  $page_title = " About Us";
+  $home = false;
+  $about_us = true;
 }
 
 require_once("./languages/lang.php");
@@ -129,8 +136,8 @@ require_once("./languages/lang.php");
       <!-- We ECHO class current based upon the boolean variables used in above PHP Snippet -->
       <li><a href="./index.php" <?php if ($home) echo 'class="current"' ?>>Home</a></li>
       <li>
-        <label for="btn-1" class="show">Categories +</label>
-        <a href="./categories.php" <?php if ($category) echo 'class="current"' ?>>Categories*</a>
+        <label for="btn-1" class="show">Categories</label>
+        <a href="./categories.php" class="listed <?php if ($category) echo 'current' ?>">Categories</a>
         <input type="checkbox" id="btn-1" class="input" />
         <ul>
           <?php
@@ -164,22 +171,29 @@ require_once("./languages/lang.php");
           <li><a href="./categories.php">More +</a></li>
         </ul>
       </li>
-      <li><a href="./bookmarks.php" <?php if ($bookmark) echo 'class="current"' ?>>Bookmarks</a></li>
       <li>
-        <a>Language*</a>
-        <div class="selectlang">
-          <div class="header__languages">
-            <a id="rus-btn" <?php if($_SESSION['lang']=='ru'){?>class="active-lang"<?php }?>>RUS</a>
-            <a id="kz-btn" <?php if($_SESSION['lang']=='kz'){?>class="active-lang"<?php }?>>KZ</a>
-            <a id="eng-btn" <?php if($_SESSION['lang']=='en'){?>class="active-lang"<?php }?>> EN</a>
-          </div>
-        </div>
+        <a href="" class="listed <?php if ($changePass) echo 'current' ?>">Language</a>
+        <ul>
+          <a id="rus-btn" <?php if($_SESSION['lang']=='ru'){?>class="active-lang"<?php }?>>Russian</a>
+          <a id="kz-btn" <?php if($_SESSION['lang']=='kz'){?>class="active-lang"<?php }?>>Kazakh</a>
+          <a id="eng-btn" <?php if($_SESSION['lang']=='en'){?>class="active-lang"<?php }?>>English</a>
+        </ul>
       </li>
+      <li><a href="./bookmarks.php" <?php if ($bookmark) echo 'class="current"' ?>>Bookmarks</a></li>
+      <li><a href="./about-us.php" <?php if ($about_us) echo 'class="current"' ?>>About Us</a></li>
       <?php
       if (isset($_SESSION['USER_NAME'])) {
       } else {
       ?>
-        <li><a href="./about-us.php" <?php if ($login) echo 'class="current"' ?>>About Us</a></li>
+      <li class="nav-login">
+        <div>
+          <a href="./user-login.php">Login</a>
+          <a href="./user-login.php">Sign Up</a>
+        </div>
+        <a href="./user-login.php">
+          <img src="./assets/images/svgs/login.svg" alt="">
+        </a>
+      </li>
           <!-- <li>
         <label for="btn-2" class="show">Login +</label>
         <a href="./user-login.php" <?php if ($login) echo 'class="current"' ?>>Login</a>
