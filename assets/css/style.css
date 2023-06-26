@@ -313,7 +313,7 @@
 
 .img-slider .slide .info .info-text {
   width: 54vw;
-  /* height: 100px; */
+  height: 135px;
 }
 
 .img-slider .slide .info h1 {
@@ -405,7 +405,7 @@
 
 .footer .join-us .box li{
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 17px;
 }
 
@@ -416,7 +416,7 @@
 .footer li {
   line-height: 1.5625em;
   padding-bottom: 5px;
-  font-size: var(--ts-lg);
+  font-size: var(--ts-md);
   font-weight: 500;
   font-family: var(--ff-monts);
 }
@@ -535,6 +535,8 @@
   margin-top: 10px;
   border-radius: var(--border-radius);
   font-family: var(--ff-nunito);
+  display: flex;
+  justify-content: center;
   /* background-color: #fff; */
 }
 

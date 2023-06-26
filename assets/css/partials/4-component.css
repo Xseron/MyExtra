@@ -106,7 +106,13 @@
 }
 
 .btn-container {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 20;
+  width: 100%;
+  padding-right: 20px;
 }
 
 .btn-light {
@@ -231,6 +237,7 @@
 .card .card-text {
   flex: 1 1 50%;
   padding: 9px;
+  position: relative;
 }
 
 .card .card-title {
@@ -272,11 +279,10 @@
 }
 
 .card .bookmark {
-  position: absolute;
+  /* position: absolute; */
   z-index: 1;
-  /* top: 0; */
-  right: 10px;
-  /* top: 3px; */
+  /* right: -50; */
+
 }
 
 .card .bookmark i {
@@ -385,6 +391,8 @@
   gap: 22px;
   margin-left: auto;
   margin-right: auto;
+  height: 144px;
+  margin-bottom: 16px;
 }
 
 /* PAGINATION */

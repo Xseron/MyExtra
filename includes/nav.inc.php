@@ -136,7 +136,6 @@ require_once("./languages/lang.php");
       <!-- We ECHO class current based upon the boolean variables used in above PHP Snippet -->
       <li><a href="./index.php" <?php if ($home) echo 'class="current"' ?>>Home</a></li>
       <li>
-        <label for="btn-1" class="show">Categories</label>
         <a href="./categories.php" class="listed <?php if ($category) echo 'current' ?>">Categories</a>
         <input type="checkbox" id="btn-1" class="input" />
         <ul>
