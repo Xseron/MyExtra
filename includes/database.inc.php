@@ -8,10 +8,10 @@ $host = "localhost";
 $user = "root";
 
 // MySQL Password
-$pass = "";
+$pass = "OOcrcP1P4nt**";
 
 // Default Database name
-$db = "myextra";
+$db = "news-portal";
 
 // Creating a connection to the DataBase
 $con = mysqli_connect($host, $user, $pass, $db);

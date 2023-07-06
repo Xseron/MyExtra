@@ -107,16 +107,97 @@ if (isset($_POST['article_title'])) {
                 <div class="tab-content">
                   <div class="tab-pane fade in active" id="rusdesc">
                     <textarea name="article_desc_ru" class="form-control" id="editorRU" placeholder="Article Description RU" rows="20" min="150"></textarea>
+                    <div class="form-group">
+                      <label>copy rus</label>
+                      <select name="copy_rus_id" class="form-control" id="category">
+                        <option value="0" selected>copy rus...</option>
+                        <?php
+                        $cat_sql = "SELECT member_id, member_name FROM members WHERE member_role = 2 ORDER BY member_name ASC ";
+                        $cat_res = mysqli_query($con, $cat_sql);
+                        $cat_row = mysqli_num_rows($cat_res);
+
+                        while ($cat_data = mysqli_fetch_assoc($cat_res)) {
+                          $cat_id = $cat_data['member_id'];
+                          $cat_name = $cat_data['member_name'];
+                          echo '
+                        <option value="' . $cat_id . '">' . $cat_name . '</option>
+                      ';
+                        }
+                        ?>
+                      </select>
+                      <p id="error-cat" class="error-msg text-danger"></p>
+                    </div>
                   </div>
                   <div class="tab-pane fade" id="endesc">
                     <textarea name="article_desc_eng" class="form-control" id="editorENG" placeholder="Article Description ENG" rows="20" min="150"></textarea>
+                    <div class="form-group">
+                      <label>copy eng</label>
+                      <select name="copy_rus_id" class="form-control" id="category">
+                        <option value="0" selected>copy eng...</option>
+                        <?php
+                        $cat_sql = "SELECT member_id, member_name FROM members WHERE member_role = 2 ORDER BY member_name ASC ";
+                        $cat_res = mysqli_query($con, $cat_sql);
+                        $cat_row = mysqli_num_rows($cat_res);
+
+                        while ($cat_data = mysqli_fetch_assoc($cat_res)) {
+                          $cat_id = $cat_data['member_id'];
+                          $cat_name = $cat_data['member_name'];
+                          echo '
+                        <option value="' . $cat_id . '">' . $cat_name . '</option>
+                      ';
+                        }
+                        ?>
+                      </select>
+                      <p id="error-cat" class="error-msg text-danger"></p>
+                    </div>
                   </div>
                   <div class="tab-pane fade" id="kzdesc">
                     <textarea name="article_desc_kz" class="form-control" id="editorKZ" placeholder="Article Description KZ" rows="20" min="150"></textarea>
-                  </div> 
+                    <div class="form-group">
+                      <label>copy kz</label>
+                      <select name="copy_rus_id" class="form-control" id="category">
+                        <option value="0" selected>copy kz...</option>
+                        <?php
+                        $cat_sql = "SELECT member_id, member_name FROM members WHERE member_role = 2 ORDER BY member_name ASC ";
+                        $cat_res = mysqli_query($con, $cat_sql);
+                        $cat_row = mysqli_num_rows($cat_res);
+
+                        while ($cat_data = mysqli_fetch_assoc($cat_res)) {
+                          $cat_id = $cat_data['member_id'];
+                          $cat_name = $cat_data['member_name'];
+                          echo '
+                        <option value="' . $cat_id . '">' . $cat_name . '</option>
+                      ';
+                        }
+                        ?>
+                      </select>
+                      <p id="error-cat" class="error-msg text-danger"></p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              
+
+              <div class="form-group">
+                <label>Дизайнер</label>
+                <select name="copy_rus_id" class="form-control" id="category">
+                  <option value="0" selected>Дизайнер...</option>
+                  <?php
+                  $cat_sql = "SELECT member_id, member_name FROM members WHERE member_role = 1 ORDER BY member_name ASC ";
+                  $cat_res = mysqli_query($con, $cat_sql);
+                  $cat_row = mysqli_num_rows($cat_res);
+
+                  while ($cat_data = mysqli_fetch_assoc($cat_res)) {
+                    $cat_id = $cat_data['member_id'];
+                    $cat_name = $cat_data['member_name'];
+                    echo '
+                        <option value="' . $cat_id . '">' . $cat_name . '</option>
+                      ';
+                  }
+                  ?>
+                </select>
+                <p id="error-cat" class="error-msg text-danger"></p>
+              </div>
+
               <div class="form-group">
                 <label>Article Image</label>
                 <input type="file" class="form-control" placeholder="Article Image" name="article_img" id="article_img" accept="image/*" required />

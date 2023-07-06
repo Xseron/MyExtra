@@ -22,6 +22,7 @@
   $category = false; 
   $article = false;
   $articleall = false;
+  $member = false;
   
   // Strpos returns the position of the search string in the main string or returns 0 (false)
   // Checking if the page is Home Page
@@ -45,6 +46,12 @@
     $page_title = " Articles Edit";
     $home = false;
     $articleall = true;
+  }
+
+  if(strpos($uri,"/members.php") != false){
+    $page_title = " Members";
+    $home = false;
+    $member = true;
   }
 
   if(strpos($uri,"/categories.php") != false){
@@ -95,7 +102,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand">Extra Curriculum </a>
+        <a class="navbar-brand">My Extra</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -103,6 +110,7 @@
           <li <?php if($article) echo 'class="active"' ?>><a href="./articles.php">Articles</a></li>
           <li <?php if($articleall) echo 'class="active"' ?>><a href="./articles_all.php">Articles All</a></li>
           <li <?php if($category) echo 'class="active"' ?>><a href="./categories.php">Categories</a></li>
+          <li <?php if($member) echo 'class="active"' ?>><a href="./members.php">Members</a></li>
           <li <?php if($pass) echo 'class="active"' ?>><a href="./change-password.php">Change Password</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -116,7 +124,7 @@
   <header id="header">
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
           <h1><?php echo $page_title ?></h1>
         </div>
         <div class="col-md-2 btn-box">
@@ -125,10 +133,20 @@
           </a>
         </div>
         <div class="col-md-2 btn-box">
+          <a href="./add-member.php" class="btn btn-warning" type="button">
+            Create a new Member
+          </a>
+        </div>
+        <div class="col-md-2 btn-box">
           <a href="./add-article.php" class="btn btn-warning" type="button">
             Create a new Article
           </a>
         </div>
+        <!-- <div class="col-md-2 btn-box">
+          <a href="./add-article.php" class="btn btn-warning" type="button">
+            Create a new Member
+          </a>
+        </div> -->
       </div>
     </div>
   </header>

@@ -31,6 +31,9 @@
     <a href="./categories.php" class="list-group-item"><span class="glyphicon glyphicon-list"></span> Categories
       <span class="badge"><?php echo $no_of_categories ?></span>
     </a>
+    <a href="./members.php" class="list-group-item"><span class="glyphicon glyphicon-list"></span> Members
+      <span class="badge"></span>
+    </a>
     <a href="./change-password.php" class="list-group-item"><span class="glyphicon glyphicon-cog"></span> Change
       Password
     </a>

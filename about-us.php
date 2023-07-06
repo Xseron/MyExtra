@@ -67,7 +67,6 @@
                         </ul>
                         <a>Контакт в соцсетях</a>
                         <a>Поделиться ссылкой</a>
-                        <a>Создать PDF</a>
                     </div>
                     ";
                 }
@@ -75,7 +74,7 @@
                     echo "<div class='members'>";
                     $titles = array("Founder", "Developers", "Managers", "Designers", "Copywriters");
                     foreach ($titles as $title) {
-                        $memberQuery = "SELECT * FROM members WHERE member_position = '$title'"; 
+                        $memberQuery = "SELECT * FROM members WHERE member_position = '$x'"; 
                         $result = mysqli_query($con, $memberQuery);
                         if (mysqli_num_rows($result) > 0) {
                             echo "<h2>$title</h2>
