@@ -110,7 +110,7 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: 20;
+  bottom: 20px;
   width: 100%;
   padding-right: 20px;
 }
@@ -177,34 +177,46 @@
   /* background: var(--black-color); */
   text-align: center;
 }
+
 .btn-card {
+  position: relative;
+  display: inline-block;
   font-weight: 700;
   line-height: 16px;
   background: var(--primary-color);
-  padding: 0.4rem 2.0rem;
-  font-size: var(--ts-sml);
+  padding: 0.4rem 2rem;
   font-size: 15px;
-  border-radius: 5;
+  border-radius: 5px;
   text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
-.btn-card a {
-  font-size: 20px;
+
+.article-list .btn-card:after {
+  content: '↠';
+  position: absolute;
+  opacity: 0;  
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50%;
+  transition: 0.5s;
 }
-.btn-card:hover {
-  background: var(--tag-trend-color);
+
+.article-list .btn-card:hover {
+  padding-left: 1.5rem;
+  padding-right: 2.5rem;
 }
-.btn-card span {
-  transition: all 200ms ease-in-out;
-}
-.btn-card:hover span {
-  padding-left: 18px;
+
+.article-list .btn-card:hover::after {
+  opacity: 1;
+  right: 10%;
 }
 /* CARDS */
 .card {
   background: #fff;
   position: relative;
   overflow: hidden;
-  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.35);
   border-radius: 25px;
   display: flex;
 }
@@ -238,10 +250,16 @@
   flex: 1 1 50%;
   padding: 9px;
   position: relative;
+  color: #333;
+  transition: background-color 0.5s ease;
+}
+
+.article-list .card:hover .card-text{
+  background-color: #222;
+  color: #FFF;
 }
 
 .card .card-title {
-  color: #333;
   font-family: var(--ff-monts);
   font-size: var(--ts-md);
   font-weight: 800;
@@ -257,7 +275,6 @@
 }
 
 .card .card-dedline {
-  color: #333;
   font-family: var(--ff-monts);
   font-size: var(--ts-sml);
   font-weight: 800;
@@ -293,6 +310,11 @@
 .card-more {
   background-color: var(--primary-color);
   color: var(--light-color);
+  padding: 20px 0;
+}
+
+.card-more h3 {
+  margin: 0;
 }
 
 .card-more::before {

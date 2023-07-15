@@ -1,11 +1,9 @@
-const languages = ["Russian", "English", "Kazakh"]
-let current = 0
+const languages = ["Russian", "English", "Kazakh"];
+let current = 0;
 
-
-if( !localStorage.getItem("lang") ){
-    $(`.popup`).css({"display":"block"})
+if (!localStorage.getItem("lang")) {
+   $(`.popup`).css({ display: "block" });
 }
-
 
 // function changeLanguage(cur, delta){
 //     if (cur+delta >= languages.length){
@@ -25,18 +23,21 @@ if( !localStorage.getItem("lang") ){
 //     $(`.popup`).css({"display":"none"})
 // }
 
-function openPopupWithLanguage(){
-    $(`.popup`).css({"display":"block"})
+function openPopupWithLanguage() {
+   $(`.popup`).css({ display: "block" });
 }
 
-function pickLanguage(lang){
-    localStorage.setItem("lang", lang)
-    $(`.popup`).css({"display":"none"})
+function pickLanguage(lang) {
+   localStorage.setItem("lang", lang);
+   $(`.popup`).css({ display: "none" });
 }
 
-
-$('.Kazakh').click(function(){ pickLanguage("Kazakh")})
-$('.Russian').click(function(){ pickLanguage("Russian")})
-$('.English').click(function(){ pickLanguage("English")})
-
-
+$(".Kazakh").click(function () {
+   pickLanguage("Kazakh");
+});
+$(".Russian").click(function () {
+   pickLanguage("Russian");
+});
+$(".English").click(function () {
+   pickLanguage("English");
+});

@@ -132,13 +132,14 @@ require_once("./languages/lang.php");
           <a href="./search.php" class="search <?php if ($search) echo 'current' ?>">
             <i id="search-icon" class="fas fa-search"></i>
           </a>
+      <a href="./search.php" class="nav-search">Search</a>
       </li>
       <!-- We ECHO class current based upon the boolean variables used in above PHP Snippet -->
       <li><a href="./index.php" <?php if ($home) echo 'class="current"' ?>>Home</a></li>
       <li>
-        <a href="./categories.php" class="listed <?php if ($category) echo 'current' ?>">Categories</a>
+        <a href="#" class="drop-menu <?php if ($category) echo 'current' ?>" onclick="event.preventDefault();">Categories</a>
         <input type="checkbox" id="btn-1" class="input" />
-        <ul>
+        <ul class="drop-content">
           <?php
 
           // Category Query to fetch random 4 categories
@@ -171,11 +172,17 @@ require_once("./languages/lang.php");
         </ul>
       </li>
       <li>
-        <a href="" class="listed <?php if ($changePass) echo 'current' ?>">Language</a>
-        <ul>
-          <a id="rus-btn" <?php if($_SESSION['lang']=='ru'){?>class="active-lang"<?php }?>>Russian</a>
-          <a id="kz-btn" <?php if($_SESSION['lang']=='kz'){?>class="active-lang"<?php }?>>Kazakh</a>
-          <a id="eng-btn" <?php if($_SESSION['lang']=='en'){?>class="active-lang"<?php }?>>English</a>
+<a href="#" class="drop-menu" onclick="event.preventDefault();">Language</a>
+        <ul class="drop-content">
+          <li>
+            <a id="rus-btn" <?php if($_SESSION['lang']=='ru'){?>class="active-lang"<?php }?>>Russian</a>
+          </li>
+          <li>
+            <a id="kz-btn" <?php if($_SESSION['lang']=='kz'){?>class="active-lang"<?php }?>>Kazakh</a>
+          </li>
+          <li>
+            <a id="eng-btn" <?php if($_SESSION['lang']=='en'){?>class="active-lang"<?php }?>>English</a>
+          </li>
         </ul>
       </li>
       <li><a href="./bookmarks.php" <?php if ($bookmark) echo 'class="current"' ?>>Bookmarks</a></li>
@@ -229,6 +236,7 @@ require_once("./languages/lang.php");
           echo '<li><a disabled>Hello ' . $_SESSION["USER_NAME"] . ' !</a></li>';
         }
         ?>
+        <script src="../assets/js/drop-menu-opener.js"></script>
         <!-- <script>
           $("#rus-btn").click(function (e) { 
             e.preventDefault();

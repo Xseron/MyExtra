@@ -6,7 +6,7 @@
 <?php
     $titles = array("Founder", "Developers", "Managers", "Designers", "Copywriters");
 ?>
-<section class="about-us">
+<section class="py-1 about-us">
     <div class="container">
         <div class="about-us-content">
             <div class="our-team">

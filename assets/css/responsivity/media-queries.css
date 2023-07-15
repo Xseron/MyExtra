@@ -49,7 +49,7 @@
   }
 
   .btn-container {
-    bottom: 10;
+    bottom: 10px;
   }
 
   .btn-card {
@@ -59,6 +59,17 @@
 
   .card .bookmark i {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width:420px) {
+
+  .btn-container {
+    bottom: 10px;
+  }
+
+  .btn-card {
+    padding: 0.4rem ;
   }
 }
 
@@ -107,7 +118,7 @@
 
 }
 
-@media (max-width: 968px) {
+@media (max-width: 976px) {
   .navbar {
     display: flex;
     flex-direction: column;
@@ -130,11 +141,15 @@
   .navbar ul ul li {
     display: block;
     width: 100%;
+    padding: 3px 24px;
+    background-color: transparent;
   }
   .navbar ul li a {
     font-size: var(--ts-md);
     font-weight: 500;
+    padding: 0;
   }
+
   .show {
     display: block;
     color: var(--black-color);
@@ -152,6 +167,7 @@
     right: 40px;
     line-height: 70px;
     cursor: pointer;
+    z-index: 100;
   }
   .navbar ul ul {
     top: 70px;
@@ -159,25 +175,63 @@
     float: none;
     position: static;
     display: none;
-    opacity: 1;
-    visibility: visible;
+    /* opacity: 1; */
+    /* visibility: visible; */
   }
   .navbar ul ul a {
-    padding-left: 40px;
+    padding-left: 0px;
   }
   [id^="btn"]:checked + ul {
     display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  /* height: 100%; */
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #ECEFF1;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+  opacity: 0.95;
+  height: 100%;
+  }
+
+  .nav-search{
+    display: inline-block;
+  }
+
+ .navbar ul li .search {
+    display: none;
+  }
+
+  .ul li {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
   }
   .navbar ul ul li {
     border-bottom: 0px;
   }
+
+
   span.cancel:before {
     content: "\f00d";
+  }
+
+  .category-list .card-more {
+    font-size: 45px;
   }
 }
 
 /* NAVBAR PHONE */
-@media (min-width: 576px) and (max-width: 968px) {
+@media (min-width: 576px) and (max-width: 976px) {
   .navbar {
     display: flex;
     flex-direction: column;
@@ -267,16 +321,23 @@
 /* IMAGE SLIDER TABLET POTRAIT*/
 @media (max-width: 620px) {
   .img-slider {
-    /* height: 320px;  */
+    height: 240px;
   }
   .img-slider .slide .info {
     /* top: 8px; */
     left: 17px;
-    width: 90vw;
+    width: 80vw;
+    flex-direction: column;
+    align-items: start;
+  }
+  .img-slider .slide .info .info-text{
+    /* top: 8px; */
+    width: 80vw;
+    height: 150px;
   }
   .img-slider .slide img {
     object-fit: cover;
-    /* height: 320px; */
+    height: 240px;
   }
   .img-slider .slide .info h1 {
     /* font-size: var(--ts-lg); */
@@ -288,6 +349,7 @@
   }
   .img-slider .navigation {
     bottom: 15px;
+    display: none;
   }
 
   .img-slider .navigation .slide-nav-btn {
@@ -314,22 +376,24 @@
     font-size: 16px;
     padding: 6px 11px;
   }
+
+
 }
 
 /* IMAGE SLIDER PHONE */
 @media (max-width: 420px) {
   .img-slider {
-    height: 300px;
+    height: 250px;
   }
   .img-slider .slide .info {
     top: 10px;
-    left: 10px;
+    left: 32px;
     width: 90vw;
     padding: 0.5rem 1rem;
   }
   .img-slider .slide img {
     object-fit: cover;
-    height: 300px;
+    height: 250px;
   }
   .img-slider .slide .info h1 {
     font-size: var(--ts-lg);
@@ -437,6 +501,8 @@
     color: black;
     padding: 5px;
   }
+
+
 }
 
 /* ASIDE CARDS SMALL PHONE */
@@ -533,5 +599,14 @@
 @media (max-width: 450px) {
   .input-field {
     width: 250px;
+  }
+}
+
+/* About Us */
+
+@media (max-width: 976px)
+{
+  .about-us-content {
+    flex-direction: column;
   }
 }

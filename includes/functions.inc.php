@@ -52,8 +52,9 @@ alert('<?php echo $message ?>');
           '.strip_tags($data).'
         </p>
         <div class="btn-container">
-          <a href="news.php?id='.$id.'" class="btn btn-card">Read More
-          </a>';
+        <a href="news.php?id='.$id.'" class="btn btn-card">
+          Read More
+        </a>';
           echo '
           <a href="';
           
