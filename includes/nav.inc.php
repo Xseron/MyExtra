@@ -129,9 +129,12 @@ require_once("./languages/lang.php");
     <input type="checkbox" id="btn" class="input" />
     <ul class="ul">
       <li>
-          <a href="./search.php" class="search <?php if ($search) echo 'current' ?>">
-            <i id="search-icon" class="fas fa-search"></i>
-          </a>
+      <form method="GET" action="./search.php" class="search" >
+        <button type="submit" class="search-button">
+          <i id="search-icon" class="fas fa-search"></i>
+        </button>
+        <input class="search-input search-nav" type="text" name="name" id="searchInput" placeholder="Search" autocomplete="off" />
+      </form>
       <a href="./search.php" class="nav-search">Search</a>
       </li>
       <!-- We ECHO class current based upon the boolean variables used in above PHP Snippet -->
